@@ -38,7 +38,6 @@
         }
         
         return $formated_keys;
-   
     }
 
     
