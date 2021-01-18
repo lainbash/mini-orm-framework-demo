@@ -18,7 +18,7 @@
 <br>
 
 <a href="signin.php">Sign in</a>
-
+<a href="logout.php">Log out</a>
 
 <?php //of course, business logic should be separeted from rendering, don't mind it too much in this case
     if(!empty($_POST)) {
@@ -43,9 +43,10 @@
         else {
             echo "Failed!!";
         }
+        echo "Current state of User object: ";
         var_dump($user);
+        echo '$_SESSION serialized content:';
         var_dump($_SESSION);
-        
     }
 
 ?>
