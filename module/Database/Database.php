@@ -65,17 +65,13 @@
             return true;
         }
 
-        //this have to be fixed according to the change made to the insert_table method, 
         static function update_row(string $table, string $column, string $value, $whereChange): bool  {
 
-            $db = self::connect_db();
-            $req = $db->prepare("UPDATE `$table` set `$column` = `:testValue` WHERE `$table`.`$column` = :whereChange;");
-
-            $req->bindParam(":testValue", $value, PDO::PARAM_STR);
-            $req->bindParam(":whereChange", $whereChange);
+            $db  = self::connect_db();
+            $req = $db->prepare("UPDATE `$table` set `$column` = \"$value\" WHERE `$table`.`$column` = \"$whereChange\";");
 
             $req->execute();
-
+            var_dump($req);
             if($req->rowCount() === 0) {
 
                 return false;
