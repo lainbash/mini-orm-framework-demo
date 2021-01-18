@@ -1,5 +1,4 @@
 <?php //Test file, expect bad practices and presentation (please don't mind the <br>)
-    require_once __DIR__ . "/module/Database/Database.php";
     require_once __DIR__ . "/module/Database/User.php";
     require_once __DIR__ . "/module/function.php";
     session_start();
